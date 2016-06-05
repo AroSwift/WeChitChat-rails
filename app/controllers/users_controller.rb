@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  # http://liamkaufman.com/blog/2013/02/27/adding-real-time-to-a-restful-rails-app/
+  # https://github.com/ankane/searchkick
+
   def index
     @users = User.all
     # render 'layouts/application'
