@@ -27,10 +27,10 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Custom gems
 gem 'haml'
-
 gem 'simple_form'
-
+# gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use Capistrano for deployment
