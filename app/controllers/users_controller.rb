@@ -1,11 +1,8 @@
 class UsersController < ApplicationController
 
-  def home_page
-    render 'layouts/application'
-  end
-
   def index
     @users = User.all
+    # render 'layouts/application'
   end
 
   def show
