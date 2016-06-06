@@ -46,14 +46,14 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to users_index_path, class: 'navbar-brand' do %>
-          <%= image_tag('logo.png', height: '60', width: '225') %>
+          <%= image_tag('logo.png', height: '50', width: '225') %>
         <% end %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav pull-right">
-            <li><%= link_to "Home", users_index_path  %></li>
-            <li><%= link_to "About", about_users_path  %></li>
-            <li><%= link_to "SignUp", signup_users_path  %></li>
-            <li><%= link_to "Login", login_users_path  %></li>
+            <li class="<%= 'active' if current_page?(users_index_path) %>"><%= link_to "Home", users_index_path, class: 'active' %></li>
+            <li class="<%= 'active' if current_page?(about_users_path) %>"><%= link_to "About", about_users_path %></li>
+            <li class="<%= 'active' if current_page?(login_users_path) %>"><%= link_to "Login", login_users_path %></li>
+            <li class="<%= 'active' if current_page?(signup_users_path) %>"><%= link_to "SignUp", signup_users_path %></li>
           </ul>
         </div>
       </div>
@@ -61,28 +61,19 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class=<%= content_for?(:side_bar) ? "col-lg-9" : "col-lg-12" %>>
           <%= bootstrap_flash %>
-          <%= yield %>
+          <div class="well content">
+            <%= yield %>
+          </div>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+        <%= yield(:side_bar) if content_for?(:side_bar) %>
+      </div>
+    </div>
 
-      <footer>
-        <p>Copyright &copy; Wechitchat 2016</p>
-      </footer>
-
-    </div> <!-- /container -->
+    <footer>
+      <p class="container">&copy; <%= Time.now.year %> Wechitchat</p>
+    </footer>
 
   </body>
 </html>

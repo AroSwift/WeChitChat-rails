@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.0'
 
 # Custom gems
 gem 'haml'
-gem 'simple_form'
+# gem 'simple_form'
 # gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

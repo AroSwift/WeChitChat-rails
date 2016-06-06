@@ -1,1 +1,18 @@
-%h1 Home
+- content_for :title do
+  Home
+
+- content_for :side_bar do
+  .col-lg-3
+    .well.sidebar-nav
+      %h3 Login
+      = simple_form_for :user, url: login_users_path do |f|
+        = f.input :user
+        = f.input :password
+        = f.button :submit
+
+
+%h3 Chatting Safe With WeChitChat
+WeChitChat is devoted to keeping WeChitChat a safe environment for kids. Kids, have you ever wanted to chat with other kids, but your parents told you it wouldn't be safe? They are right, the internet can be a dangerous place, that is why WeChitChat is here. We have made a secure and safe place for children to chat in. Parents, we have a place for you too. To make an account, just go to the sign up page->parent sign up to make an account so you can monitor what your child is doing.
+
+%h3 A brief introduction of WeChitChat
+To make a WeChitChat account, look at the side of the page and look for sign up or go to the sign up. WeChitChat is a safe and secure place for your kids to chat because we filter out foul language and allow parental controls. Look in about us for more information on creating an account on WeChitChat, and to find out more about WeChitChat.
