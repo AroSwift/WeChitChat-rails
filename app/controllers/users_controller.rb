@@ -8,11 +8,14 @@ class UsersController < ApplicationController
     # render 'layouts/application'
   end
 
+  def login
+  end
+
   def show
     @user = User.find(params[:id])
   end
 
-  def new
+  def signup
     @user = User.new
   end
 
