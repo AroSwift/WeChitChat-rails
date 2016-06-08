@@ -1,0 +1,22 @@
+- content_for :title do
+  SignUp
+
+- content_for :side_bar do
+  .col-lg-3
+    .well.sidebar-nav.center
+      %h3 Why Sign Up for a child's account?
+      %ul.nav.nav-list
+        We provide safe chatting, messaging, parental monitoring,
+        admin monitoring and bad word blocking filter.
+        %li= link_to 'Are you a Parent? SignUp here!', parent_signup_users_path
+
+
+%h1 SignUp
+
+= simple_form_for :user, url: kid_signup_users_path, html: { class: 'form-horizontal proper-width' } do |f|
+  = f.input :user
+  .hint Use 3-15 alphanumeric characters: a-z, 0-9, no spaces. Please do not use your name or any other information that identifies you in real life.
+  = f.input :password
+  .hint Your email will only be used for retrieving your password and for important information concerning your safety. Only your friends will be able to see it. 
+  = f.input :password_confirmation
+  = f.button :submit, 'Login', class: 'side-bar-button'

@@ -4,13 +4,18 @@
 - content_for :side_bar do
   .col-lg-3
     .well.sidebar-nav
-      %h3 Login
+      %h3.text-center Login
       .sidebar
         = simple_form_for :user, url: login_users_path, html: { class: 'form-horizontal' } do |f|
           = f.input :user
           = f.input :password
           = f.button :submit, 'Login', class: 'side-bar-button'
 
+    .well.sidebar-nav
+      %h3.text-center SignUp
+      .signup-sidebar
+        %p.text-center= link_to '... for Kids!', kid_signup_users_path
+        %p.text-center= link_to '... for Parents!', parent_signup_users_path
 
 %h3 Chatting Safe With WeChitChat
 WeChitChat is devoted to keeping WeChitChat a safe environment for kids.
@@ -23,3 +28,28 @@ To make an account, just go to the sign up page->parent sign up to make an accou
 To make a WeChitChat account, look at the side of the page and look for sign up or go to the sign up.
 WeChitChat is a safe and secure place for your kids to chat because we filter out foul language and allow parental controls.
 Look in about us for more information on creating an account on WeChitChat, and to find out more about WeChitChat.
+
+%h3 About Us
+WeChitChat is a safe place for kids to chat with their friends, and is completely free.
+We help provide a safe environment for your child by blocking bad words, monitoring, and allow parental controls.
+WeChitChat is happily brought to you by Aaron Barlow who is 14.  I built this site in 7 months, spending 4 hours a day, to make it one of the safest places for kids to chat.
+%br
+%br
+What you can do on Wechitchat:
+%ul
+  %li Create an account
+  %ul
+    %li Your account name is your alias in WeChitChat
+    %li Write something about yourself for your profile
+  %li Allows messaging between two friends
+  %ul
+    %li Instand online chatting
+    %li Video Chatting
+    %li Post messages on your profile and friend's profile
+    %li Add or delete friends
+For parents:
+%ul
+  %li Can create a parent account linked to their child's account
+  %ul
+    %li Can monitor child's profile and messaging activity
+    %li Can delete child's messages, posts and friends

@@ -1,4 +1,28 @@
 - content_for :title do
   Login
 
+
+- content_for :side_bar do
+  .col-lg-3
+    .well.sidebar-nav.center
+      %h3 Trouble Logging In?
+      Are you having trouble logging into your account?
+      There are two possibilities:
+      %br
+      %br
+      %ol
+        %li That account does not exist
+        %li You forgot your account login
+      %a{:href => "get_pass.php"} Retrieve Lost Account
+
+
 %h1 Login
+
+= simple_form_for :user, url: login_users_path, html: { class: 'form-horizontal proper-width' } do |f|
+  = f.input :user
+  = f.input :password
+  = f.button :submit, 'Login', class: 'side-bar-button'
+
+%br
+%br
+%p=link_to "Don't have an account? Sign up!", kid_signup_users_path
